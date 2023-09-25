@@ -1,16 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://47mhbvb1aj0p"]
+[gd_scene load_steps=4 format=3 uid="uid://47mhbvb1aj0p"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_kg2jm"]
-[ext_resource type="Texture2D" uid="uid://yoio44tmjtsu" path="res://icon.svg" id="1_we150"]
-[ext_resource type="Script" path="res://scenes/scripts/Logo.gd" id="2_alryk"]
+[ext_resource type="Texture2D" uid="uid://bggajpftytmkl" path="res://graphics/objects/gate.png" id="3_jbpem"]
 [ext_resource type="PackedScene" uid="uid://c73wymw687853" path="res://scenes/player/player.tscn" id="4_xxx2b"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_kg2jm")
 
-[node name="Logo" type="Sprite2D" parent="."]
-texture = ExtResource("1_we150")
-script = ExtResource("2_alryk")
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Gate" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(492, -523)
+texture = ExtResource("3_jbpem")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-946, -1304, -946, 32, -916, 115, -858, 193, -790, 231, -729, 253, 127, 255, 128, 62, 981, 63, 982, 256, 1845, 254, 1918, 229, 1987, 172, 2019, 122, 2046, 65, 2055, -2, 2056, -1304)
 
 [node name="Player" parent="." instance=ExtResource("4_xxx2b")]
-position = Vector2(391, 232)
+position = Vector2(313, 429)
