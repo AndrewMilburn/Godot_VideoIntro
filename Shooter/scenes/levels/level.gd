@@ -4,9 +4,7 @@ var test_array: Array[String] = ["Hello", "World", "How", "Are you?"]
 
 func _ready():
 	$Logo.rotation_degrees = 90
-	
-	for i in test_array:
-		print(i)
+
 	
 func _process(delta):
 	$Logo.rotation_degrees += 50 * delta
@@ -17,5 +15,4 @@ func _process(delta):
 	if $Logo.pos.x > 700:
 		$Logo.pos.x = 0
 		
-#	print(Input.is_action_pressed("left"))
 	
