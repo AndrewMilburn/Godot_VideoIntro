@@ -1,10 +1,12 @@
 extends Node2D
 
-
-func _on_gate_body_entered(body):
-	print("Gate entered")
-	print(body)
+func _on_gate__player_entered_gate(body):
+	print("Alarm")
 
 
-func _on_gate_body_exited(body):
-	print("Gate exited")
+func _on_player_laser_fired():
+	print("player fired laser")
+	
+
+func _on_player_grenade_thrown():
+	print("player threw grenade")

@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 var laser_ready : bool = true
 var grenade_ready : bool = true
+signal laser_fired
+signal grenade_thrown
 
 func _process(_delta):	
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -12,11 +14,13 @@ func _process(_delta):
 		print("Pew Pew")
 		laser_ready = false
 		$laser_cooldown.start()
+		laser_fired.emit()
 		
 	if(Input.is_action_pressed("secondary action") and grenade_ready):
 		print("GRENADE!!")
 		grenade_ready = false
 		$grenade_cooldown.start()
+		grenade_thrown.emit()
 
 
 func _on_laser_cooldown_timeout():

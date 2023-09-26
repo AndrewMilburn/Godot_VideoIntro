@@ -22,3 +22,4 @@ position = Vector2(60, 738)
 shape = SubResource("RectangleShape2D_3ex2j")
 
 [connection signal="body_entered" from="EntryZone" to="." method="_on_entry_zone_body_entered"]
+[connection signal="body_exited" from="EntryZone" to="." method="_on_entry_zone_body_exited"]
