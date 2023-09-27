@@ -4,14 +4,14 @@
 [ext_resource type="Script" path="res://scenes/projectiles/laser.gd" id="1_tyq15"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rprjo"]
-radius = 9.0
+radius = 7.0
 height = 122.0
 
 [node name="Laser" type="Area2D"]
 script = ExtResource("1_tyq15")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 20)
+position = Vector2(-1, 20)
 texture = ExtResource("1_6xigy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
