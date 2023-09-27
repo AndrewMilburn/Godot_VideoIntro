@@ -3,7 +3,7 @@ extends CharacterBody2D
 var laser_ready : bool = true
 var grenade_ready : bool = true
 signal laser_fired(pos)
-signal grenade_thrown
+signal grenade_thrown(pos)
 
 func _process(_delta):	
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -13,7 +13,7 @@ func _process(_delta):
 	if(Input.is_action_pressed("primary action") and laser_ready):
 		print("Pew Pew")
 		var laser_markers = $LaserSpawnPoints.get_children()
-		print(laser_markers)
+		
 		var selected_laser = laser_markers[randi() % laser_markers.size()]
 		print(selected_laser)
 		laser_ready = false
@@ -22,9 +22,10 @@ func _process(_delta):
 		
 	if(Input.is_action_pressed("secondary action") and grenade_ready):
 		print("GRENADE!!")
+		var grenade_pos = $LaserSpawnPoints.get_children()[0]
 		grenade_ready = false
 		$grenade_cooldown.start()
-		grenade_thrown.emit()
+		grenade_thrown.emit(grenade_pos.global_position)
 
 
 func _on_laser_cooldown_timeout():
