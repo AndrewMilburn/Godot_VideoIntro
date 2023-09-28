@@ -6,8 +6,8 @@ var grenade_scene : PackedScene = preload("res://scenes/projectiles/grenade.tscn
 
 
 func _on_gate__player_entered_gate(_body):
-	pass
-#	print("Alarm")
+#	pass
+	print("Alarm")
 
 
 func _on_player_laser_fired(pos, dirn):
