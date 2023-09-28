@@ -3,12 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://dxbmcomm3vkof" path="res://graphics/enemies/drone.png" id="1_dbs8j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gfahd"]
-radius = 71.0
-height = 298.0
+radius = 46.0
+height = 204.0
 
 [node name="Drone" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_dbs8j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
