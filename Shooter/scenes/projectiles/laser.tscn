@@ -18,3 +18,4 @@ texture = ExtResource("1_6xigy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_rprjo")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)

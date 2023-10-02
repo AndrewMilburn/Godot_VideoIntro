@@ -139,15 +139,15 @@ rotation = -2.63545
 
 [node name="Projectiles" type="Node2D" parent="."]
 
+[node name="SteamVent" parent="." instance=ExtResource("14_32kqv")]
+position = Vector2(101, 483)
+
 [node name="Player" parent="." instance=ExtResource("4_xxx2b")]
 position = Vector2(561, 518)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
-
-[node name="SteamVent" parent="." instance=ExtResource("14_32kqv")]
-position = Vector2(101, 483)
 
 [connection signal="_player_entered_gate" from="Gate" to="." method="_on_gate__player_entered_gate"]
 [connection signal="grenade_thrown" from="Player" to="." method="_on_player_grenade_thrown"]
