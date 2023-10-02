@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj2xw5utclkqj"]
+[gd_scene load_steps=6 format=3 uid="uid://bj2xw5utclkqj"]
 
 [ext_resource type="Texture2D" uid="uid://yfbsnpf86ib4" path="res://graphics/tilesets/interior.png" id="1_dj73l"]
+[ext_resource type="PackedScene" uid="uid://bfsl8uvw6f7ut" path="res://scenes/stuff/simple_light.tscn" id="2_dub6w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r61y0"]
 size = Vector2(3268, 2099)
@@ -209,3 +210,7 @@ layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array(-65532, 327680, 6, 4, 0, 8, -65529, 327680, 6, 7, 65536, 6, 65543, 0, 8, 5, 0, 6, 6, 65536, 7, 65542, 327680, 6, 131078, 65536, 8, 131077, 131072, 7, 131076, 0, 6, 131075, 0, 6, 131074, 196608, 6, 65538, 65536, 6, 2, 65536, 7, 1, 0, 8, 131073, 0, 6, 131072, 262144, 7, 196610, 0, 8, 196613, 0, 7, 196611, 65536, 7, 131079, 0, 7, 196615, 65536, 8, 196614, 0, 6)
+
+[node name="SimpleLight" parent="." instance=ExtResource("2_dub6w")]
+position = Vector2(284, 1198)
+rotation = -1.5708
