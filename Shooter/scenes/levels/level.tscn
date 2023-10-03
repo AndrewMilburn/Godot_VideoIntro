@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://47mhbvb1aj0p"]
+[gd_scene load_steps=19 format=3 uid="uid://47mhbvb1aj0p"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_kg2jm"]
 [ext_resource type="Texture2D" uid="uid://bdprw027fn5do" path="res://graphics/ground/stones.png" id="2_fft5y"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ce2powsh1r1bf" path="res://graphics/tilesets/outside_walls.png" id="9_myo1a"]
 [ext_resource type="Texture2D" uid="uid://b22jvgibqh2pd" path="res://graphics/tilesets/soil.png" id="10_6c6wg"]
 [ext_resource type="Texture2D" uid="uid://ddteud2je1njw" path="res://graphics/decals/moss/moss_5.png" id="10_skf0u"]
+[ext_resource type="PackedScene" uid="uid://cmjgxehhudpjo" path="res://scenes/Anims/light_fan_animation.tscn" id="13_ghp48"]
 [ext_resource type="PackedScene" uid="uid://bj2xw5utclkqj" path="res://scenes/levels/house.tscn" id="13_xngon"]
 [ext_resource type="PackedScene" uid="uid://b1rpo76n7xh3p" path="res://scenes/stuff/steam_vent.tscn" id="14_32kqv"]
 
@@ -59,7 +60,7 @@ texture_repeat = 2
 position = Vector2(373, 508)
 texture = ExtResource("2_fft5y")
 region_enabled = true
-region_rect = Rect2(-2000, -1000, 8880.39, 4611.74)
+region_rect = Rect2(-6307.77, -2540.17, 8792.73, 7101.17)
 
 [node name="Decoration" type="Sprite2D" parent="Ground"]
 modulate = Color(0.247059, 0.2, 0.12549, 0.952941)
@@ -79,68 +80,75 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(262140, 65536, 0, 262141, 65536, 0, 262142, 65536, 0, 262143, 65536, 0, 196608, 65536, 0, 196611, 65536, 0, 196612, 65536, 0, 196613, 65536, 0, 196614, 65536, 0, 196615, 65536, 0, 196603, 0, 2, 131067, 0, 2, 65531, 0, 2, -5, 65536, 1, -4, 65536, 0, -3, 131072, 0, 196616, 131072, 2, 131080, 0, 2, 65544, 65536, 1, 65545, 131072, 2, 9, 0, 2, -65527, 0, 2, -131063, 131072, 1, -131064, 65536, 0, -131065, 65536, 0, -131066, 65536, 0, -131067, 0, 0, 262139, 65536, 2, 196610, 0, 0, 196609, 131072, 0)
 
-[node name="Moss6" type="Sprite2D" parent="."]
+[node name="Moss6" type="Sprite2D" parent="Ground"]
 position = Vector2(3515, -387)
 rotation = -1.58301
 texture = ExtResource("6_peek1")
 
-[node name="Moss1" type="Sprite2D" parent="."]
+[node name="Moss1" type="Sprite2D" parent="Ground"]
 position = Vector2(3135, 301)
 texture = ExtResource("6_peek1")
 
-[node name="Moss4" type="Sprite2D" parent="."]
+[node name="Moss4" type="Sprite2D" parent="Ground"]
 position = Vector2(3011, -427)
 rotation = 2.34747
 texture = ExtResource("6_peek1")
 
-[node name="Moss2" type="Sprite2D" parent="."]
+[node name="Moss2" type="Sprite2D" parent="Ground"]
 position = Vector2(3009, 825)
 texture = ExtResource("7_ii3u4")
 
-[node name="Moss5" type="Sprite2D" parent="."]
+[node name="Moss5" type="Sprite2D" parent="Ground"]
 position = Vector2(2337, -193)
 rotation = -1.02451
 texture = ExtResource("9_003d5")
 
-[node name="Moss9" type="Sprite2D" parent="."]
+[node name="Moss9" type="Sprite2D" parent="Ground"]
 position = Vector2(2737, 95)
 rotation = 0.0925025
 skew = 0.371755
 texture = ExtResource("9_003d5")
 
-[node name="Moss7" type="Sprite2D" parent="."]
+[node name="Moss7" type="Sprite2D" parent="Ground"]
 position = Vector2(3192, -156)
 texture = ExtResource("10_skf0u")
 
-[node name="Moss8" type="Sprite2D" parent="."]
+[node name="Moss8" type="Sprite2D" parent="Ground"]
 position = Vector2(3552, -136)
 rotation = -1.02451
 texture = ExtResource("10_skf0u")
 
-[node name="Moss3" type="Sprite2D" parent="."]
+[node name="Moss3" type="Sprite2D" parent="Ground"]
 position = Vector2(2635, -411)
 texture = ExtResource("8_x271k")
 
-[node name="Moss10" type="Sprite2D" parent="."]
+[node name="Moss10" type="Sprite2D" parent="Ground"]
 position = Vector2(2847, 481)
 texture = ExtResource("8_x271k")
 
-[node name="Moss11" type="Sprite2D" parent="."]
+[node name="Moss11" type="Sprite2D" parent="Ground"]
 position = Vector2(2331, 329)
-rotation = -4.65479
+rotation = 1.6284
 texture = ExtResource("8_x271k")
+
+[node name="SteamVent" parent="Ground" instance=ExtResource("14_32kqv")]
+position = Vector2(101, 483)
+
+[node name="House" parent="Ground" instance=ExtResource("13_xngon")]
+position = Vector2(-2202, 2133)
+rotation = 0.637045
+
+[node name="LightFanAnimation" parent="Ground" instance=ExtResource("13_ghp48")]
+position = Vector2(-889, 3931)
+autoplay = "default"
+frame_progress = 0.325052
 
 [node name="Gate" parent="." instance=ExtResource("3_8v1kh")]
 position = Vector2(544, -584)
-
-[node name="House" parent="." instance=ExtResource("13_xngon")]
-position = Vector2(-459, 4532)
-rotation = -2.63545
+metadata/_edit_lock_ = true
 
 [node name="Projectiles" type="Node2D" parent="."]
-
-[node name="SteamVent" parent="." instance=ExtResource("14_32kqv")]
-position = Vector2(101, 483)
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("4_xxx2b")]
 position = Vector2(561, 518)

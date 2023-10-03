@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://brp5fsu4p0jtg" path="res://graphics/decals/white.png" id="3_xk3ps"]
 
 [sub_resource type="Gradient" id="Gradient_us5wn"]
-colors = PackedColorArray(0.458824, 0.796078, 0.866667, 1, 0.968627, 0.976471, 1, 0.113725)
+colors = PackedColorArray(0.879663, 0.96071, 0.980339, 0.764706, 0.968627, 0.976471, 1, 0.113725)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_tr55s"]
 gradient = SubResource("Gradient_us5wn")
@@ -29,18 +29,15 @@ orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
 scale_min = 0.5
 scale_curve = SubResource("CurveTexture_srkoa")
-color = Color(0.458824, 0.796078, 0.866667, 1)
+color = Color(0.819608, 0.945098, 0.972549, 1)
 color_ramp = SubResource("GradientTexture1D_tr55s")
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fditr"]
-polygon = PackedVector2Array(-50, 0, -48, -19, -39, -36, -14, -47, 20, -51, 104, 4, 106, 9, 107, 14, 106, 20, 103, 25, 98, 28, 87, 30, 76, 41, 62, 42, 50, 40, 34, 33, -10, 48, -21, 48, -28, 42, -41, 21)
+polygon = PackedVector2Array(-50, 0, -48, -19, -39, -36, -14, -47, 20, -51, 55, -17, 102, 2, 106, 9, 107, 14, 106, 20, 103, 25, 98, 28, 87, 30, 76, 41, 62, 42, 50, 40, 34, 33, -10, 48, -21, 48, -28, 42, -41, 21)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
 script = ExtResource("1_q1kgi")
-
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-21, 46, -25, 44, -28, 41, -30, 37, -41, 21, -43, 16, -43, 12, -47, 7, -49, 0, -49, -14, -47, -21, -42, -31, -38, -36, -32, -39, -26, -41, -23, -42, -21, -44, -14, -47, 0, -49, 18, -51, 25, -46, 35, -34, 36, -30, 39, -25, 43, -25, 47, -23, 52, -19, 61, -10, 70, -10, 74, -8, 77, -5, 85, -4, 88, -3, 90, -1, 97, 0, 103, 3, 106, 8, 107, 13, 106, 20, 103, 25, 99, 25, 98, 28, 90, 29, 86, 27, 83, 32, 77, 35, 77, 38, 75, 41, 63, 42, 51, 41, 48, 40, 46, 37, 47, 34, 33, 31, 30, 34, 7, 43, 0, 46, -5, 47, -12, 48)
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 position = Vector2(29, -1)
@@ -78,6 +75,9 @@ one_shot = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_fditr")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(101, 3, 61, -8, 22, -47, -12, -47, -40, -34, -48, -18, -50, 0, -28, 42, -18, 46, -10, 47, 34, 31, 49, 39, 75, 40, 100, 26)
 
 [connection signal="timeout" from="laser_cooldown" to="." method="_on_laser_cooldown_timeout"]
 [connection signal="timeout" from="grenade_cooldown" to="." method="_on_grenade_cooldown_timeout"]
