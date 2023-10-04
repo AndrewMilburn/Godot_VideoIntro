@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://cmjgxehhudpjo"]
+[gd_scene load_steps=51 format=3 uid="uid://cmjgxehhudpjo"]
 
 [ext_resource type="Texture2D" uid="uid://dxy86p5m8v4ul" path="res://graphics/lights/fan_animation/00000.png" id="1_3mv4s"]
 [ext_resource type="Texture2D" uid="uid://bwiyabp4umy1l" path="res://graphics/lights/fan_animation/00001.png" id="2_6egg5"]
@@ -48,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://b11np1d8c2v6g" path="res://graphics/lights/fan_animation/00045.png" id="46_ghqyg"]
 [ext_resource type="Texture2D" uid="uid://r7qmy4yvi316" path="res://graphics/lights/fan_animation/00046.png" id="47_sqqi5"]
 [ext_resource type="Texture2D" uid="uid://b1a858qs5c35t" path="res://graphics/lights/fan_animation/00047.png" id="48_jl2p5"]
+[ext_resource type="Texture2D" uid="uid://c6vms2nttvqml" path="res://graphics/lights/textures/circle.png" id="49_b7y1u"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_am3o6"]
 animations = [{
@@ -205,3 +206,8 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_am3o6")
 frame = 5
 frame_progress = 0.468966
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 6.15
+texture = ExtResource("49_b7y1u")
+texture_scale = 0.52

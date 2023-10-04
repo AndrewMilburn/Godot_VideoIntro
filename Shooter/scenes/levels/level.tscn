@@ -139,7 +139,7 @@ position = Vector2(-2202, 2133)
 rotation = 0.637045
 
 [node name="LightFanAnimation" parent="Ground" instance=ExtResource("13_ghp48")]
-position = Vector2(-889, 3931)
+position = Vector2(-1109, 3801)
 autoplay = "default"
 frame_progress = 0.325052
 

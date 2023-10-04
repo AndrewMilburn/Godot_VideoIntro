@@ -1,13 +1,52 @@
-[gd_scene load_steps=5 format=3 uid="uid://4hmctpj2cow5"]
+[gd_scene load_steps=9 format=3 uid="uid://4hmctpj2cow5"]
 
 [ext_resource type="Texture2D" uid="uid://cbdgvtmilrs8y" path="res://graphics/projectiles/grenade.png" id="1_0wjtr"]
 [ext_resource type="Script" path="res://scenes/projectiles/grenade.gd" id="1_buorn"]
+[ext_resource type="Texture2D" uid="uid://dw8ttql4r2gkl" path="res://graphics/explosions/explosion_3.png" id="3_k36lf"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ahypt"]
 bounce = 0.4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tt5mo"]
 radius = 16.4924
+
+[sub_resource type="Animation" id="Animation_ifdtw"]
+resource_name = "Splosion"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Splosion:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_xcji3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Splosion:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nehpv"]
+_data = {
+"RESET": SubResource("Animation_xcji3"),
+"Splosion": SubResource("Animation_ifdtw")
+}
 
 [node name="Grenade" type="RigidBody2D"]
 collision_layer = 8
@@ -18,9 +57,19 @@ linear_velocity = Vector2(200, 0)
 linear_damp = 1.4
 script = ExtResource("1_buorn")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tt5mo")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_0wjtr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_tt5mo")
+[node name="Splosion" type="Sprite2D" parent="."]
+texture = ExtResource("3_k36lf")
+hframes = 8
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nehpv")
+}
