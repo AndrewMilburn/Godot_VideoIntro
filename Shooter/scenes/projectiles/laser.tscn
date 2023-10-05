@@ -20,4 +20,8 @@ texture = ExtResource("1_6xigy")
 shape = SubResource("CapsuleShape2D_rprjo")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
+[node name="LaserTime" type="Timer" parent="."]
+wait_time = 0.6
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="LaserTime" to="." method="_on_timer_timeout"]

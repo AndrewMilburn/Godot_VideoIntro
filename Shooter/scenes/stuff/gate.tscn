@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/stuff/gate.gd" id="1_lhk6p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ex2j"]
-size = Vector2(818, 347)
+size = Vector2(818, 252.5)
 
 [node name="Gate" type="StaticBody2D"]
 collision_layer = 4
@@ -21,7 +21,7 @@ polygon = PackedVector2Array(-1436, -782, -1434, 571, -1400, 660, -1340, 724, -1
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EntryZone"]
-position = Vector2(60, 738)
+position = Vector2(60, 690.75)
 shape = SubResource("RectangleShape2D_3ex2j")
 
 [connection signal="body_entered" from="EntryZone" to="." method="_on_entry_zone_body_entered"]

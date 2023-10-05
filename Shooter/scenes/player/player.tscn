@@ -35,14 +35,15 @@ scale_curve = SubResource("CurveTexture_srkoa")
 color = Color(0.819608, 0.945098, 0.972549, 1)
 color_ramp = SubResource("GradientTexture1D_tr55s")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_12lui"]
-radius = 51.9711
+[sub_resource type="CircleShape2D" id="CircleShape2D_7skec"]
+radius = 51.6236
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
 script = ExtResource("1_q1kgi")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
 occluder = SubResource("OccluderPolygon2D_fditr")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
@@ -81,7 +82,7 @@ one_shot = true
 trail_lifetime = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_12lui")
+shape = SubResource("CircleShape2D_7skec")
 
 [connection signal="timeout" from="laser_cooldown" to="." method="_on_laser_cooldown_timeout"]
 [connection signal="timeout" from="grenade_cooldown" to="." method="_on_grenade_cooldown_timeout"]

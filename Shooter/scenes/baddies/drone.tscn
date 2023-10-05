@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbpv0ju5f745k"]
+[gd_scene load_steps=4 format=3 uid="uid://dbpv0ju5f745k"]
 
+[ext_resource type="Script" path="res://scenes/baddies/drone.gd" id="1_2rw5o"]
 [ext_resource type="Texture2D" uid="uid://dxbmcomm3vkof" path="res://graphics/enemies/drone.png" id="1_dbs8j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gfahd"]
@@ -9,6 +10,7 @@ height = 204.0
 [node name="Drone" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 15
+script = ExtResource("1_2rw5o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.6, 0.6)
