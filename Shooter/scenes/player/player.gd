@@ -2,12 +2,16 @@ extends CharacterBody2D
 
 var laser_ready : bool = true
 var grenade_ready : bool = true
+@export var max_speed: int = 500
+var speed: int = max_speed
+
+
 signal laser_fired(pos, dirn)
 signal grenade_thrown(pos, dirn)
 
 func _process(_delta):	
 	var direction = Input.get_vector("left", "right", "up", "down")
-	velocity = direction * 500
+	velocity = direction * speed
 	move_and_slide()
 	
 	look_at(get_global_mouse_position())

@@ -157,6 +157,8 @@ position = Vector2(561, 518)
 zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
 
+[connection signal="player_entered_house" from="Ground/House" to="." method="_on_house_player_entered_house"]
+[connection signal="player_exited_house" from="Ground/House" to="." method="_on_house_player_exited_house"]
 [connection signal="_player_entered_gate" from="Gate" to="." method="_on_gate__player_entered_gate"]
 [connection signal="grenade_thrown" from="Player" to="." method="_on_player_grenade_thrown"]
 [connection signal="laser_fired" from="Player" to="." method="_on_player_laser_fired"]

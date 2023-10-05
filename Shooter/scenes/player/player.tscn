@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://c73wymw687853"]
+[gd_scene load_steps=11 format=3 uid="uid://c73wymw687853"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_q1kgi"]
 [ext_resource type="Texture2D" uid="uid://hbnf6n3n8kq2" path="res://graphics/player/player.png" id="1_tr2fi"]
 [ext_resource type="Texture2D" uid="uid://brp5fsu4p0jtg" path="res://graphics/decals/white.png" id="3_xk3ps"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fditr"]
-polygon = PackedVector2Array(-50, 0, -48, -19, -39, -36, -14, -47, 20, -51, 55, -17, 102, 2, 106, 9, 107, 14, 106, 20, 103, 25, 98, 28, 87, 30, 76, 41, 62, 42, 50, 40, 34, 33, -10, 48, -21, 48, -28, 42, -41, 21)
+polygon = PackedVector2Array(-50, 0, -48, -19, -39, -36, -14, -47, 20, -51, 55, -17, 94, 1, 98, 8, 98, 13, 98, 17, 95, 22, 90, 26, 82, 33, 76, 41, 62, 42, 50, 40, 34, 33, -10, 48, -21, 48, -28, 42, -41, 21)
 
 [sub_resource type="Gradient" id="Gradient_us5wn"]
 colors = PackedColorArray(0.879663, 0.96071, 0.980339, 0.764706, 0.968627, 0.976471, 1, 0.113725)
@@ -35,18 +35,18 @@ scale_curve = SubResource("CurveTexture_srkoa")
 color = Color(0.819608, 0.945098, 0.972549, 1)
 color_ramp = SubResource("GradientTexture1D_tr55s")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_12lui"]
+radius = 51.9711
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
 script = ExtResource("1_q1kgi")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(100, 2, 62, -11, 19, -49, -12, -47, -40, -34, -48, -18, -50, 0, -28, 42, -18, 46, -10, 47, 34, 31, 49, 39, 75, 40, 100, 26, 106, 21, 106, 10)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_fditr")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
-position = Vector2(29, -1)
+position = Vector2(29, -5.96046e-08)
 rotation = 1.5708
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_tr2fi")
@@ -62,13 +62,13 @@ one_shot = true
 [node name="LaserSpawnPoints" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="LaserSpawnPoints"]
-position = Vector2(105, 15)
+position = Vector2(107, 15)
 
 [node name="Marker2D2" type="Marker2D" parent="LaserSpawnPoints"]
-position = Vector2(100, 6)
+position = Vector2(105, 6)
 
 [node name="Marker2D3" type="Marker2D" parent="LaserSpawnPoints"]
-position = Vector2(100, 24)
+position = Vector2(105, 24)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(107, 15)
@@ -76,9 +76,12 @@ emitting = false
 amount = 60
 process_material = SubResource("ParticleProcessMaterial_lx3ia")
 texture = ExtResource("3_xk3ps")
-lifetime = 0.05
+lifetime = 0.06
 one_shot = true
 trail_lifetime = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_12lui")
 
 [connection signal="timeout" from="laser_cooldown" to="." method="_on_laser_cooldown_timeout"]
 [connection signal="timeout" from="grenade_cooldown" to="." method="_on_grenade_cooldown_timeout"]

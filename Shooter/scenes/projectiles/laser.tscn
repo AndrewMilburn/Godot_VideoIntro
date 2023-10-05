@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rprjo"]
 radius = 7.0
-height = 122.0
+height = 68.0
 
 [node name="Laser" type="Area2D"]
 collision_layer = 8
@@ -13,9 +13,11 @@ collision_mask = 7
 script = ExtResource("1_tyq15")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, 20)
+position = Vector2(-1, 47)
 texture = ExtResource("1_6xigy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_rprjo")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
