@@ -5,7 +5,7 @@ var laser_scene : PackedScene = preload("res://scenes/projectiles/laser.tscn")
 var grenade_scene : PackedScene = preload("res://scenes/projectiles/grenade.tscn")
 
 
-func _on_gate_player_entered_gate(_body):
+func _on_gate__player_entered_gate(_body):
 	var tween = create_tween()
 	tween.tween_property($Player, "speed", 0, 0.5)
 
@@ -35,4 +35,3 @@ func _on_house_player_entered_house():
 func _on_house_player_exited_house():
 	var twoon = get_tree().create_tween()
 	twoon.tween_property($Player/Camera2D, "zoom", Vector2(0.6,0.6), 1)
-	twoon.tween_property($Player, "modulate:a", 1, 1.5)
