@@ -5,9 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bfsl8uvw6f7ut" path="res://scenes/stuff/simple_light.tscn" id="2_dub6w"]
 [ext_resource type="PackedScene" uid="uid://c0k8olx4yfac0" path="res://scenes/stuff/wall_lamp.tscn" id="3_tdh8r"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r61y0"]
-size = Vector2(3268, 2099)
-
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sv87t"]
 polygon = PackedVector2Array(195, -20.75, -195, -20.75, -195, 20.75, 195, 21)
 
@@ -279,13 +276,12 @@ physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 11
 sources/0 = SubResource("TileSetAtlasSource_olvp7")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r61y0"]
+size = Vector2(3248, 2068)
+
 [node name="House" type="Area2D"]
 collision_layer = 16
 script = ExtResource("1_t8upo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1753, 782.5)
-shape = SubResource("RectangleShape2D_r61y0")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_d20ft")
@@ -337,6 +333,10 @@ rotation = 3.14159
 [node name="WallLamp2" parent="." instance=ExtResource("3_tdh8r")]
 position = Vector2(1033, 696)
 rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1753, 779)
+shape = SubResource("RectangleShape2D_r61y0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
